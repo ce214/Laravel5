@@ -1,0 +1,8 @@
+RewriteEngine On
+RewriteCond %{HTTP_HOST} ^112.74.106.192/Beautiful_Day/admin
+RewriteCond %{REQUEST_URI} !^admin_manage\.php$
+RewriteCond %{REQUEST_URI} \.php$
+RewriteRule (.*)\.php$ http://112.74.106.192/Beautiful_Day/admin/$1/ [R]
+RewriteCond %{HTTP_HOST} !^112.74.106.192/Beautiful_Day/admin/
+RewriteRule ^(.+) %{HTTP_HOST} [C]
+RewriteRule ^([^\.]+) http://112.74.106.192/Beautiful_Day/admin/admin_manage.php?username=$1
